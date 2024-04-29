@@ -4,34 +4,26 @@ import { Button,Input,Img} from "../../components";
 
 import ImageUpload from "../../components/ImageUpload"
 
-const AddVehicle = (props)=>{
 
-  function handleFileChange (event){
-    const selectedFile = event.target.files[0];
-    // Do something with the selected file, like uploading it to a server or processing it.
-    console.log('Selected file:', selectedFile);
-  };
+const AddService = (props)=>{
+
+
     const idInput= useRef();
-    const imageInput= useRef();
+    const dateInput= useRef();
     const typeInput= useRef();
-    const makeInput= useRef();
-    const modelInput= useRef();
-    const yearInput= useRef();
-    const priceInput= useRef();
-
-
+    const costInput= useRef();
+    const depreciationInput= useRef();
+  
 
     function submitHandler(event){
       /* event and prevent Default just fot the system  */
 
       event.preventDefault();
       const enteredId= idInput.current.value
-      const enteredImage=imageInput.current.value
+      const enteredDate= dateInput.current.value
       const enteredType= typeInput.current.value
-      const enteredMake=makeInput.current.value
-      const enteredModel=modelInput.current.value
-      const enteredYear=yearInput.current.value
-      const enteredPrice=priceInput.current.value
+      const enteredCost=costInput.current.value
+      const enteredDepr=depreciationInput.current.value
    
       
   
@@ -41,14 +33,10 @@ const AddVehicle = (props)=>{
       const list={
 
           id:enteredId,
-          image:enteredImage,
+          date:enteredDate,
           type:enteredType,
-          make:enteredMake,
-          model:enteredModel,
-          year:enteredYear,
-          price:enteredPrice,
-          
-         
+          cost:enteredCost,
+          depreciation:enteredDepr
       
          
 
@@ -67,7 +55,7 @@ const AddVehicle = (props)=>{
                     <div className="flex sm:flex-col flex-row gap-4 items-center justify-center w-full">
             
                       <Button className="bg-gray-300 cursor-pointer flex-1 font-bold py-3 rounded-[10px] text-center text-gray-900 text-lg w-full">
-                        Sell
+                        add service
                       </Button>
                       
                     </div>
@@ -85,12 +73,18 @@ const AddVehicle = (props)=>{
                           
                         ></Input>
                         <Input
-                        id="make" ref={makeInput}
+                        id="date" ref={dateInput}
                           name="textfieldlarge"
-                          placeholder="make"
+                          placeholder="date"
                           className="font-semibold p-0 placeholder:text-gray-600 text-gray-600 text-left text-lg w-full"
                           wrapClassName="bg-white-A700 border border-bluegray-100 border-solid flex pb-3.5 pt-5 px-4 rounded-[10px] w-full"
-                       
+                          suffix={
+                            <Img
+                              className="mt-auto mb-[5px] h-5 ml-[35px]"
+                              src="images/img_location.svg"
+                              alt="location"
+                            />
+                          }
                         ></Input>
                          
                         <Input
@@ -102,57 +96,50 @@ const AddVehicle = (props)=>{
                           
                         ></Input>
                          <Input
-                       id="year" ref={yearInput}
+                       id="cost" ref={costInput}
 
                           name="textfieldlarge"
-                          placeholder="year"
+                          placeholder="cost"
                           className="font-semibold p-0 placeholder:text-gray-600 text-gray-600 text-left text-lg w-full"
                           wrapClassName="bg-white-A700 border border-bluegray-100 border-solid flex pb-3.5 pt-5 px-4 rounded-[10px] w-full"
                        
                         ></Input>
                           <Input
-                         id="model" ref={modelInput}
+                         id="depreciation" ref={depreciationInput}
 
                           name="textfieldlarge"
-                          placeholder="Model"
+                          placeholder="depreciation"
                           className="font-semibold p-0 placeholder:text-gray-600 text-gray-600 text-left text-lg w-full"
                           wrapClassName="bg-white-A700 border border-bluegray-100 border-solid flex pb-3.5 pt-5 px-4 rounded-[10px] w-full"
                        
                         ></Input>
                        
 
-                        <Input
-                       id="image" ref={priceInput}
-
-                          name="textfieldlarge_Two"
-                          placeholder="Price Range"
-                          className="font-semibold p-0 placeholder:text-gray-600 text-gray-600 text-left text-lg w-full"
-                          wrapClassName="bg-white-A700 border border-bluegray-100 border-solid flex pb-3.5 pt-5 px-4 rounded-[10px] w-full"
-                          
-                        ></Input>
-
-                        <Input type="file"
-                       id="image" ref={imageInput}
-
-                          name="textfieldlarge_Two"
-                          placeholder="image"
-                          className="font-semibold p-0 placeholder:text-gray-600 text-gray-600 text-left text-lg w-full"
-                          wrapClassName="bg-white-A700 border border-bluegray-100 border-solid flex pb-3.5 pt-5 px-4 rounded-[.,10px] w-full"
-                          onChange={handleFileChange}
-                        ></Input>
+                        
                       </div>
-                      <ImageUpload></ImageUpload>
+                     
                       <Button onClick={submitHandler} className="bg-gray-900 cursor-pointer font-bold py-[17px] rounded-[10px] text-center text-lg text-white-A700 w-full">
-                        Add new service
+                        Add the new service
                       </Button>
+
+
+                      
                     </div>
                     
+
+                  
+
+                    
+                    
                   </div>
+                  
                 </div>
+                
+                
 
 
     )
 
 
 }
-export default AddVehicle;
+export default AddService;

@@ -38,6 +38,16 @@ const LandingPageHeader = (props) => {
                 </Text>
                 </Link>
               </div>
+              <Link to="/service" className="text-base text-gray-900">
+         <Text className="w-auto" size="txtManropeSemiBold16">
+                Service 
+              </Text>
+            </Link>
+            <Link to="/finance" className="text-base text-gray-900">
+         <Text className="w-auto" size="txtManropeSemiBold16">
+                Finance 
+              </Text>
+            </Link>
              
               <Link to="/contactpage" className="text-base text-gray-900">
          <Text className="w-auto" size="txtManropeSemiBold16">

@@ -14,7 +14,7 @@ const LandingPagePage = () => {
 
   function Add(p){
     /* we add person.json */
-    fetch('http://ec2-18-224-12-189.us-east-2.compute.amazonaws.com:8080/api/addCar',
+    fetch("http://a02ba74e09af4423bb9f1482cbdec986-691302344.us-east-2.elb.amazonaws.com:8082/api/addVehicle",
     /* we are describing the method is because we are posting */
     {
         method:"POST",
